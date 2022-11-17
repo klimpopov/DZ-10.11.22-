@@ -5,10 +5,9 @@ int[] Massive(int size, int min, int max)
     int[] array = new int[size];
     if (min > max)
     {
-        int minTer = max;
-        int maxTer = min;
-        min = minTer;
-        max = maxTer;
+        int temp = min;
+        min = max;
+        max = temp;
     }
     for (int i = 0; i < size; i++)
     {
