@@ -4,10 +4,9 @@ int[] Massive(int size, int min, int max)
     int[] array = new int[size];
     if (min > max)
     {
-        int minTer = max;
-        int maxTer = min;
-        min = minTer;
-        max = maxTer;
+        int temp = min;
+        min = max;
+        max = temp;
     }
     for (int i = 0; i < size; i++)
     {
@@ -34,5 +33,5 @@ Console.Write("Максимальный элемет массива: трехз�
 int max = Convert.ToInt32(Console.ReadLine());
 int[] array = Massive(size, min, max);
 Console.WriteLine($"Массив: [{String.Join(", ", array)}]");
-int count = OddNumber(array);
-Console.WriteLine($"Сумма чисел, стоящих на нечётных позициях = {count}");
+int sum = OddNumber(array);
+Console.WriteLine($"Сумма чисел, стоящих на нечётных позициях = {sum}");
