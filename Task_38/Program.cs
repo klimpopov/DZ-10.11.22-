@@ -19,22 +19,29 @@ int[] Massive(int size, int min, int max)
 
 int DifferenceOfNumbers(int[] array)
 {
-    int max = array[0];
-    int min = array[0];
-    for (int i = 2; i < array.Length; i = i + 2)
+    int max=array[0];
+int min=array[0];
+    for (int i=1; i<array.Length; i++)
     {
-        sum = sum + array[i];
+        if (max<array[i])
+        {
+            max=array[i];
+        }
+        if (min>array[i])
+        {
+            min=array[i];
+        }
     }
-    return sum;
+    return max-min;
 }
-
-Console.Write("Размер массива = ");
-int size = Convert.ToInt32(Console.ReadLine());
-Console.Write("Минимальный элемент массива: трехзначное число = ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.Write("Максимальный элемет массива: трехзначное число = ");
-int max = Convert.ToInt32(Console.ReadLine());
-int[] array = Massive(size, min, max);
-Console.WriteLine($"Массив: [{String.Join(", ", array)}]");
-int count = OddNumber(array);
-Console.WriteLine($"Сумма чисел, стоящих на нечётных позициях = {count}");
+      
+    Console.Write("Размер массива = ");
+    int size = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Минимальный элемент массива: трехзначное число = ");
+    int min = Convert.ToInt32(Console.ReadLine());
+          Console.Write("Максимальный элемет массива: трехзначное число = ");
+    int max = Convert.ToInt32(Console.ReadLine());
+    int[] array = Massive(size, min, max); 
+    Console.WriteLine($"Массив: [{String.Join(", ", array)}]"); 
+      int dif=DifferenceOfNumbers(array);
+      Console.WriteLine($"Разность между максимальный и минимальным = {dif}");
